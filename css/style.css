@@ -304,3 +304,16 @@ footer {
     background-image: url("../img/main-carousel-3-hq.jpg");
   }
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #ff0000 !important;
+  border-color: #ff0000 !important;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #8b0000 !important;
+  border-color: #8b0000 !important;
+}
