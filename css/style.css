@@ -317,3 +317,32 @@ footer {
   background-color: #8b0000 !important;
   border-color: #8b0000 !important;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 30px;
+}
+
+form textarea {
+  resize: none;
+}
+
+.form-control {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+textarea {
+  height: 10rem;
+}
+
+form button {
+  width: auto;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
