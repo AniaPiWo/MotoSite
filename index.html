@@ -28,6 +28,7 @@
   </head>
 
   <body>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 sticky-top">
       <div class="container">
         <img
@@ -50,9 +51,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link px-lg-3 active" href="#home">Home</a>
-            <a class="nav-link px-lg-3" href="#services">Usługi</a>
-            <a class="nav-link px-lg-3" href="#contact">Kontakt</a>
+            <a class="nav-link px-lg-3" href="#home" >Home</a>
+            <a class="nav-link px-lg-3" href="#about-us" >O nas</a>
+            <a class="nav-link px-lg-3" href="#offer" >Oferta</a>
+            <a class="nav-link px-lg-3" href="#contact" >Kontakt</a>
           </div>
         </div>
       </div>
@@ -123,14 +125,8 @@
     </header>
 
     <main>
-      <!--       <section class="home-passion p-5 text-light">
-        <div class="container h-100 d-flex flex-column justify-content-center">
-          <p class="display-4">Samochody to nasza pasja</p>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <div class="hero-shadow"></div>
-        </div>
-      </section> -->
-      <section id="services" class="home-brand py-5">
+
+      <section id="about-us" class="home-brand py-5">
         <p class="display-2 text-center pt-5">AKG Sklep Motoryzacyjny</p>
         <div class="container py-5">
           <div class="row m-0 align-items-center">
@@ -160,40 +156,14 @@
           </div>
         </div>
       </section>
-      <section class="home-boxes">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-md-4 home-box mb-5 mb-md-0">
-              <i class="fas fa-tools mb-4"></i>
-              <h3>Lorem, ipsum dolor.</h3>
-              <p class="m-0">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-            </div>
-            <div class="col-md-4 home-box mb-5 mb-md-0">
-              <i class="fas fa-fire mb-4"></i>
-              <h3>Lorem, ipsum dolor.</h3>
-              <p class="m-0">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-            </div>
-            <div class="col-md-4 home-box mb-5 mb-md-0">
-              <i class="fas fa-cogs mb-4"></i>
-              <h3>Lorem, ipsum dolor.</h3>
-              <p class="m-0">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="top-hero service-hero">
+
+      <section id="offer" class="top-hero service-hero">
         <p class="top-hero-text text-light">oferta</p>
         <div class="hero-shadow"></div>
       </section>
 
-      <section class="py-5 service-pricing">
+      <section  class="py-5 service-pricing">
         <div class="container">
           <div class="py-5 text-center">
             <!--      <p class="display-3">Nasza oferta</p> -->
@@ -213,7 +183,7 @@
             </p>
           </div>
 
-          <div class="row">
+          <div class="row badges slide-in-left" data-animate="false">
             <div class="col-md-6 mb-4">
               <div class="service-hero-box box-one">
                 <p class="h-100 p-3">Części samochodowe</p>
@@ -244,17 +214,17 @@
         </div>
       </section>
 
-      <section id="contact" class="contact py-5">
+      <section id="contact" class="py-5">
         <div class="container">
           <div class="text-center py-5">
             <p class="display-3">Napisz do nas!</p>
           </div>
 
-          <div class="row">
-            <div class="col-md-5 col-lg-4">
-              <div class="border p-5 mb-4 text-center">
-                <h2>dane kontaktowe</h2>
+          <div class="row contact-box">
 
+            <div class="col-md-5 col-lg-4 contact">
+              <div class="border p-5  text-center">
+                <h2>dane kontaktowe</h2>
                 <p class="mt-4 fw-bold text-uppercase">adres</p>
                 <p>ul. Wspólna 11</p>
                 <p>41-200 Sosnowiec</p>
@@ -267,8 +237,9 @@
                 </div>
               </div>
             </div>
+
             <div class="col-md-7 col-lg-8">
-              <div class="border p-5 text-center">
+              <div class="border p-5 text-center form-box">
                 <h2>formularz kontaktowy</h2>
 
                 <form
@@ -330,6 +301,43 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
-    ></script>
+    >
+  </script>
+
+<script>
+     const nav = document.querySelector('.navbar-collapse')
+
+document.addEventListener('click', () => {
+  if (nav.classList.contains('show')) {
+    nav.classList.remove('show')
+  }
+})
+
+const links = document.querySelectorAll('.nav-link');
+
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    links.forEach(otherLink => otherLink.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+links.forEach(link => {
+  const section = document.querySelector(link.hash);
+  const sectionTop = section.offsetTop;
+  const sectionHeight = section.offsetHeight;
+  const sectionBottom = sectionTop + sectionHeight;
+
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY;
+
+    if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
+</script>
   </body>
 </html>
