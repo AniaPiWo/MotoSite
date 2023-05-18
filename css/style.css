@@ -16,6 +16,14 @@ body {
   font-size: 1.6rem;
 }
 
+a { text-decoration: none;   color: black;
+}
+
+a:hover {
+  color: #ff0000 !important;
+}
+
+
 .red {
   color: #ff0000 !important;
 }
@@ -74,20 +82,20 @@ header {
 
 .carousel-item {
   position: relative;
-  height: 400px;
+  height: 450px;
   background-position: center;
   background-size: cover;
   z-index: 0;
 }
 
 .carousel-img-one {
-  background-image: url("../img/main-carousel-1.jpg");
+  background-image: url("../img/slider1.jpg");
 }
 .carousel-img-two {
-  background-image: url("../img/main-carousel-2.jpg");
+  background-image: url("../img/slider2.jpg");
 }
 .carousel-img-three {
-  background-image: url("../img/main-carousel-3.jpg");
+  background-image: url("../img/slider3.jpg");
 }
 
 /* home */
@@ -242,7 +250,6 @@ footer {
   background-image: url("../img/contact/contact-hero.jpg");
   background-position: 0 40%;
 }
-
 
 
 .contact h2 {
